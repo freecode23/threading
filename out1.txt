@@ -1,0 +1,6 @@
+This is the 1 th execution of thread 1 with global var value 1
+This is the 1 th execution of thread 2 with global var value 3
+This is the 2 th execution of thread 1 with global var value 4
+This is the 2 th execution of thread 2 with global var value 6
+This is the 3 th execution of thread 1 with global var value 7
+This is the 3 th execution of thread 2 with global var value 9

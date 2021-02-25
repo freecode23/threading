@@ -1,6 +1,5 @@
 #include "threads.h"
 
-
 struct TCB_t *runQ = NULL;
 int global = 0;
 int num_executed;
@@ -9,10 +8,8 @@ int threadID = 1;
 int before_countb =0;
 int after_countb =0;
 
-
 void test1()
 {	
-
     int counter_executed = 1;
 
     while(counter_executed <= num_executed)
@@ -24,10 +21,11 @@ void test1()
         {
             global+= 1;
         }
-        else{
-            global+= num_threads;
+        else
+        {
+            global+= threadID;
         }
-        printf("This is the %d th execution of thread %d with global var value %d\n", counter_executed, threadID, global);
+        printf("\n This is %d th execution of thread %d with global var value %d \n", counter_executed, threadID, global);
        
         counter_executed++;
         threadID ++;
@@ -43,9 +41,7 @@ void test1()
         {
             threadID = 1;
         }
-
     }
-
 }
 
 int main()
@@ -59,9 +55,7 @@ int main()
 	for (int i = 0; i < num_threads; i++)
     {
         startThread(threads[i], test1);
-
     }
 
     run();
-	puts("Run ended");
 }
